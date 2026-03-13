@@ -1,0 +1,157 @@
+/* Grid */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Cards */
+.exp-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: var(--transition-smooth);
+  
+  /* Entrance Animation setup */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s cubic-bezier(.2, 1, .2, 1) forwards;
+}
+
+/* Stagger card animations */
+.exp-card:nth-child(1) { animation-delay: 0.1s; }
+.exp-card:nth-child(2) { animation-delay: 0.2s; }
+.exp-card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.exp-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+  transform: translateY(-4px); /* Slight lift on hover */
+}
+
+.company-name { font-size: 1.4rem; color: var(--text-active); font-weight: 600; }
+.role { font-size: 1rem; color: var(--accent-color); font-weight: 500;}
+.duration { font-size: 0.85rem; color: var(--text-dim); }
+
+/* Updated Button to match About Page */
+.cert-btn {
+  margin-top: auto; /* Pushes button to bottom of card */
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-active);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  align-self: flex-start;
+}
+
+.cert-btn:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+.cert-btn:active { transform: scale(0.95); }
+
+/* Modal */
+.cert-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+  background: rgba(2, 3, 10, 0.6); /* Darkened overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  
+  /* Fade animation */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.cert-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cert-modal-content {
+  width: 90%;
+  max-width: 900px;
+  height: 85vh;
+  background: var(--bg-dark);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,1);
+  overflow: hidden;
+  position: relative;
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(.2, 1, .2, 1);
+}
+
+.cert-modal.active .cert-modal-content {
+  transform: scale(1);
+}
+
+.cert-modal-content iframe,
+.cert-modal-content img#certImage { 
+  width: 100%; 
+  height: 100%; 
+  border: none; 
+}
+.cert-modal-content iframe { background: white; } /* White bg for standard PDFs */
+.cert-modal-content img#certImage {
+  object-fit: contain;
+  background: transparent;
+}
+
+/* Improved Close Button */
+.close-modal {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  z-index: 10;
+}
+
+.close-modal:hover {
+  background: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .experience-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .main-card { padding: 24px 20px; border-radius: 20px; }
+  .experience-grid { grid-template-columns: 1fr; gap: 16px; }
+  .section-title { font-size: 2rem; }
+}

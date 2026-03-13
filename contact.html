@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Contact Kartik Chauhan for opportunities in Mechanical Engineering, CAD, and Defense Design." />
+  <title>Kartik Chauhan | Contact</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <!-- Preload Other Pages -->
+  <link rel="prefetch" href="index.html" as="document" />
+  <link rel="prefetch" href="experiences.html" as="document" />
+  <link rel="prefetch" href="project.html" as="document" />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+
+</head>
+
+<body>
+
+  <!-- WebGL Fluid Cursor Canvas Setup -->
+  <canvas class="webgl-canvas" id="fluid-canvas"></canvas>
+
+  <div class="bg-container">
+    <div class="main-card">
+
+      <section class="experience-section">
+        <h2 class="section-title">Contact</h2>
+
+        <!-- Scrollable Content -->
+        <div class="experience-scroll custom-scrollbar">
+          <div class="contact-wrapper">
+
+            <!-- Contact Form -->
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST"
+              novalidate>
+              <input type="hidden" name="access_key" value="bec49210-28e8-4629-82be-200e2f814ca5" />
+              <input type="hidden" name="subject" value="New Submission from Kartik Chauhan Portfolio" />
+
+              <div class="input-group">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Enter your name" required />
+              </div>
+
+              <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Enter your email" required />
+              </div>
+
+              <div class="input-group">
+                <label>Phone</label>
+                <input type="tel" name="phone" placeholder="Enter your phone number" />
+              </div>
+
+              <div class="input-group">
+                <label>Message</label>
+                <textarea name="message" rows="5" placeholder="Write your message..." required></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+            </form>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+              <h3>Get in Touch</h3>
+              <p><strong>Email:</strong>
+                <a href="mailto:kartikchauhan0610@gmail.com" style="color: inherit; text-decoration: none;">
+                  kartikchauhan0610@gmail.com
+                </a>
+              </p>
+              <p><strong>Phone:</strong>
+                <a href="tel:+918657629668" style="color: inherit; text-decoration: none;">
+                  +91 86576-29668
+                </a>
+              </p>
+              <p><strong>Location:</strong> Mumbai, India</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Navbar container -->
+      <div id="navbar-container"></div>
+
+    </div>
+  </div>
+
+  <script src="js/navbar.js" defer></script>
+  <script src="js/contact.js" defer></script>
+  <script src="js/page-scroll.js" defer></script>
+  <script src="js/fullscreen.js" defer></script>
+  <script src="js/fluid.js" defer></script>
+</body>
+
+</html>

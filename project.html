@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Kartik Chauhan - Projects and Design Work. Featuring CAD design, Defense Engineering, and Automation." />
+  <title>Kartik Chauhan | Projects</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <!-- Preload Other Pages -->
+  <link rel="prefetch" href="index.html" as="document" />
+  <link rel="prefetch" href="experiences.html" as="document" />
+  <link rel="prefetch" href="contact.html" as="document" />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/project.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+</head>
+
+<body>
+
+  <!-- WebGL Fluid Cursor Canvas Setup -->
+  <canvas class="webgl-canvas" id="fluid-canvas"></canvas>
+
+  <div class="bg-container">
+    <div class="main-card">
+
+      <section class="experience-section">
+        <h2 class="section-title">Projects</h2>
+
+        <!-- Scrollable Inner Content -->
+        <div class="experience-scroll custom-scrollbar">
+          <div class="project-grid">
+
+            <div class="project-card">
+              <img src="images/project1.png" class="project-img" alt="Project" loading="lazy">
+              <div class="project-content">
+                <h3 class="project-title">Automated Wire Cutting Machine</h3>
+                <span class="status-badge-ongoing">Ongoing</span>
+                <p class="tech-dot">● Mechatronics Design</p>
+                <p class="project-desc">
+                  An automated industrial tool designed for precision wire measurement and cutting. Currently focusing
+                  on integrated PCB design and structural mechanics within Fusion 360.
+                </p>
+                </p>
+                <div class="tech-stack">
+                  <span>Fusion 360</span>
+                  <span>PCB Design</span>
+                  <span>Automation</span>
+                  <span>Product Design</span>
+                </div>
+                <a href="#" class="github-btn btn-disabled">Documentation</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <img src="Essentials/kiddos.jpeg" class="project-img" alt="Project" loading="lazy">
+              <div class="project-content">
+                <h3 class="project-title">Kiddos – Daycare App Prototype</h3>
+                <span class="status-badge">Completed</span>
+                <p class="tech-dot">● Mobile UI/UX Desig</p>
+                <p class="project-desc">
+                  Kiddos is a mobile application prototype designed to bridge the communication gap between daycare
+                  providers and
+                  parents. The prototype focuses on a clean, playful, and user-friendly interface that prioritizes
+                  transparency and real-time updates regarding a child's daily activities.
+                </p>
+                <div class="tech-stack">
+                  <span>Figma</span>
+                  <span>Prototyping</span>
+                  <span>Wireframing</span>
+                </div>
+                <a href="https://www.figma.com/proto/RzcAQZu8jOnaFHkh8VgRjU/Kiddos?node-id=5-2356&starting-point-node-id=1%3A3&t=3tHCfTNg7d4aDyGA-1"
+                  target="_blank" class="github-btn">
+                  Figma
+                </a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <img src="images/project3.png" class="project-img" alt="Project" loading="lazy">
+              <div class="project-content">
+                <h3 class="project-title">Automated Scarecrow System</h3>
+                <span class="status-badge">In Progress</span>
+                <p class="tech-dot">● Robotics & CAM</p>
+                <p class="project-desc">
+                  A smart agricultural solution designed to protect crops. This project involves full-scale mechanical
+                  assembly, sensor-integrated circuitry, and operational motion simulation.
+                <div class="tech-stack">
+                  <span>Autodesk Inventor</span>
+                  <span>Fusion 360</span>
+                  <span>Tinkercad</span>
+                  <span>CAM/G-Code</span>
+                </div>
+                <a href="#" class="github-btn btn-disabled">Drive</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <img src="Essentials/Shell Casing Failure.png" class="project-img" alt="Shell Casing Failure"
+                loading="lazy">
+              <div class="project-content">
+                <h3 class="project-title">Shell Casing Analysis</h3>
+                <span class="status-badge">Completed</span>
+                <p class="tech-dot">● Defence Engineering</p>
+                <p class="project-desc">
+                  Structural and bonding analysis of shell casing focusing on defect causes and solutions.
+                </p>
+                <div class="tech-stack">
+                  <span>Failure</span>
+                  <span>Defense</span>
+                </div>
+                <a href="javascript:void(0)" class="github-btn btn-restricted"
+                  title="Documentation is not available for public disclosure due to Henkel T&C.">
+                  Documentation Restricted
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Navbar container -->
+      <div id="navbar-container"></div>
+
+    </div>
+  </div>
+
+  <script src="js/navbar.js" defer></script>
+  <script src="js/project.js" defer></script>
+  <script src="js/page-scroll.js" defer></script>
+  <script src="js/fullscreen.js" defer></script>
+  <script src="js/fluid.js" defer></script>
+</body>
+
+</html>

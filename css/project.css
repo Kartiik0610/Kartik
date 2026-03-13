@@ -1,0 +1,188 @@
+/* Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Cards */
+.project-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+  
+  /* Entrance Animation setup */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s cubic-bezier(.2, 1, .2, 1) forwards;
+}
+
+/* Staggered card load */
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.project-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 35px -10px rgba(0,0,0,0.6);
+  transform: translateY(-6px);
+}
+
+/* Image Treatment */
+.project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  opacity: 0.8;
+  filter: grayscale(20%);
+  transition: var(--transition-smooth);
+}
+
+.project-card:hover .project-img {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Content Container */
+.project-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes bottom content down */
+  gap: 12px;
+  position: relative;
+  background: linear-gradient(to top, rgba(2, 3, 10, 1) 0%, transparent 100%); /* Fades image into bg */
+  margin-top: -20px;
+  z-index: 2;
+}
+
+.project-title { font-size: 1.4rem; color: var(--text-active); font-weight: 600; }
+
+/* Status Badge - Sharp Glass Pill */
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(45, 212, 191, 0.1); /* Subtle teal tint */
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  color: #34d399;
+  width: fit-content;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.status-badge-ongoing {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.1); /* Subtle Emerald tint */
+  border: 1px solid rgba(185, 112, 16, 0.3);
+  color: #df8115;
+  width: fit-content;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.tech-dot { font-size: 0.85rem; color: var(--accent-color); font-weight: 500; }
+
+.project-desc { 
+  font-size: 0.95rem; 
+  opacity: 0.9; 
+  line-height: 1.6; 
+  flex-grow: 1; /* Crucial for equal height alignment */
+}
+
+/* Tech Stack Tags */
+.tech-stack { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 8px; 
+  margin-top: 8px; 
+}
+
+.tech-stack span {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  transition: var(--transition-smooth);
+}
+
+.project-card:hover .tech-stack span {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-active);
+}
+
+
+.btn-disabled {
+  pointer-events: none; /* Prevents clicking */
+  opacity: 0.5;        /* Makes it look faded */
+  cursor: not-allowed;  /* Shows a "blocked" icon on hover */
+  filter: grayscale(1); /* Removes color */
+}
+
+
+.btn-restricted {
+  opacity: 0.6;
+  cursor: not-allowed; /* Shows the 'blocked' circle icon */
+  text-decoration: none;
+  filter: grayscale(1);
+}
+
+/* This part ensures the link doesn't "jump" or click */
+.btn-restricted:active {
+  pointer-events: none;
+}
+
+/* Github Button - Upgraded to Glass Style */
+.github-btn {
+  margin-top: 16px;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-active);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  letter-spacing: 0.5px;
+}
+
+.github-btn:hover {
+  background: rgba(45, 212, 191, 0.3); /* Accent glow */
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(45, 212, 191, 0.5);
+  transform: translateY(-2px);
+}
+
+.github-btn:active { transform: scale(0.98); }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .project-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .main-card { padding: 24px 20px; border-radius: 20px; }
+  .project-grid { grid-template-columns: 1fr; gap: 20px; }
+  .section-title { font-size: 2rem; }
+}
+
+
+

@@ -1,0 +1,11 @@
+/* Fluid Canvas layer - Sits silently behind the UI */
+.webgl-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Crucial: ensures you can still click things underneath */
+  z-index: -1; 
+  opacity: 0.6; /* Softens the intensity to match the elegant glass theme */
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kartik Chauhan - Professional Experience and Work History." />
+  <title>Kartik Chauhan | Experience</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <!-- Preload Other Pages -->
+  <link rel="prefetch" href="index.html" as="document" />
+  <link rel="prefetch" href="project.html" as="document" />
+  <link rel="prefetch" href="contact.html" as="document" />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/experiences.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+</head>
+
+<body>
+
+  <!-- WebGL Fluid Cursor Canvas Setup -->
+  <canvas class="webgl-canvas" id="fluid-canvas"></canvas>
+
+  <div class="bg-container">
+    <div class="main-card">
+
+      <section class="experience-section">
+        <h2 class="section-title">Experience</h2>
+
+        <!-- Scrollable content -->
+        <div class="experience-scroll custom-scrollbar">
+          <div class="experience-grid">
+
+            <div class="exp-card">
+              <h3 class="company-name">WEBX Technologies</h3>
+              <p class="role">Role: Client Analysis & Front-End Development</p>
+              <p class="duration">Duration: December 2025 – January 2026</p>
+
+              <p class="exp-desc">
+                Analyzed market and client data to identify potential customers for web development services by
+                evaluating
+                industry needs and digital presence. Conducted targeted outreach to prospects, introduced company
+                services, and pitched customized web solutions based on client requirements. Alongside client engagement
+                responsibilities, gained hands-on experience in front-end web development.
+              </p>
+
+              <button class="cert-btn" data-cert="certificates/webx technologies.jpg">
+                View Certificate
+              </button>
+            </div>
+
+
+            <div class="exp-card">
+              <h3 class="company-name">Henkel</h3>
+              <p class="role">Role : Mechanical Engineering Intern (3D Modeling & Simulation)</p>
+              <p class="duration">Duration: June 2025 – July 2025</p>
+
+              <p class="exp-desc">
+                Conducted advanced 3D modeling and simulation to address complex challenges in defense applications.
+                Specifically focused on analyzing and simulating defensive adhesive bond failures, utilizing mechanical
+                engineering principles to evaluate structural integrity and propose robust solutions for critical
+                defense equipment.
+              </p>
+
+              <button class="cert-btn" data-cert="certificates/henkel.jpeg">
+                View Certificate
+              </button>
+            </div>
+
+
+            <div class="exp-card">
+              <h3 class="company-name">Solid Vision</h3>
+              <p class="role">Role:Intern (Design & Simulation)</p>
+              <p class="duration">Duration: July 2022 – December 2022</p>
+
+              <p class="exp-desc">
+                Completed an intensive 5-month in-plant training focused on mechanical design, simulation, and reverse
+                engineering. Designed and sculpted models using Blender, and actively worked on 3D scanning and additive
+                manufacturing (3D printing) to prototype and validate complex mechanical components.
+              </p>
+
+              <button class="cert-btn" data-cert="certificates/solidvision.jpeg">
+                View Certificate
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Certificate Modal -->
+      <div class="cert-modal" id="certModal">
+        <div class="cert-modal-content">
+          <button class="close-modal" id="closeModal">&times;</button>
+          <iframe id="certFrame" src="" style="display: none;"></iframe>
+          <img id="certImage" src="" alt="Certificate View" style="display: none;">
+        </div>
+      </div>
+
+      <!-- Navbar container -->
+      <div id="navbar-container"></div>
+
+    </div>
+  </div>
+
+  <script src="js/navbar.js" defer></script>
+  <script src="js/experiences.js" defer></script>
+  <script src="js/page-scroll.js" defer></script>
+  <script src="js/fullscreen.js" defer></script>
+  <script src="js/fluid.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+/* --- Layout specific to About Page --- */
+.about-wrapper { display: flex; flex-direction: column; gap: 32px; }
+.about-top { display: flex; align-items: center; gap: 40px; }
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%; 
+  object-fit: cover;
+  border: 2px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+/* --- Typography --- */
+.about-name { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 4px; font-weight: 600; }
+.dynamic-role { font-size: 1.1rem; min-height: 24px; margin-bottom: 24px; color: var(--text-active); }
+.cursor { animation: blink 1s infinite; color: var(--text-active); }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+h4 { color: var(--accent-color); margin-bottom: 12px; font-size: 1.2rem; font-weight: 600; }
+p { line-height: 1.6; }
+
+/* --- Stats Strip --- */
+.stats-strip {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.stat-box h3.glow-text {
+  font-size: 2rem;
+  color: #ffffff; 
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4); 
+  margin-bottom: 4px;
+}
+.stat-box p { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); }
+
+/* --- Tactile Buttons & Tags --- */
+.social-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.glass-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-active);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.tag-list .glass-button { padding: 8px 16px; font-size: 0.8rem; }
+
+.glass-button:hover {
+  background: var(--glass-bg-hover);
+  color: #ffffff;
+  border-color: var(--accent-color); /* Hover border uses the bright blue */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.glass-button:active { transform: scale(0.95); }
+
+/* --- Responsive (Component Specific) --- */
+@media (max-width: 768px) {
+  .about-top { flex-direction: column; text-align: center; gap: 24px; }
+  .social-buttons { justify-content: center; }
+  
+  .stats-strip { flex-direction: column; gap: 20px; }
+  .tag-list { justify-content: center; }
+  .about-section { text-align: center; }
+}
+

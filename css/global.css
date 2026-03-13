@@ -1,0 +1,153 @@
+@import "fluid.css";
+
+:root {
+  /* iPhone 17 Ultramarine Tokens */
+  --bg-dark: #0a0d14; /* Very deep marine blue/black */
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-bg-hover: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(45, 212, 191, 0.15); /* Teal glass tint */
+  --glass-blur: blur(40px) saturate(180%);
+  
+  --text-active: #f8fafc; 
+  --text-dim: #94a3b8; /* Cool slate grey */
+  --accent-color: #2dd4bf; /* Vibrant teal/cyan (Ultramarine accent) */
+
+  --transition-smooth: all 0.4s cubic-bezier(.2, 1, .2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body, html {
+  height: 100%;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-dark);
+  color: var(--text-dim);
+  
+  /* Ultramarine Mesh Gradient */
+  background-image: 
+    radial-gradient(at 0% 0%, #0a0d14 0, transparent 60%),
+    radial-gradient(at 80% 0%, rgba(45, 212, 191, 0.08) 0, transparent 40%),
+    radial-gradient(at 100% 100%, #071221 0, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(13, 51, 68, 0.4) 0, transparent 50%);
+  background-size: 200% 200%;
+  animation: liquidFlow 15s ease infinite;
+}
+
+@keyframes liquidFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bg-container {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+/* Main Card */
+.main-card {
+  position: relative;
+  width: 100%;
+  max-width: 1250px; 
+  height: calc(100vh - 48px);
+  height: calc(100dvh - 48px);
+  padding: 40px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.experience-section { display: flex; flex-direction: column; height: 100%; }
+
+.section-title { 
+  font-size: 2.5rem; 
+  color: var(--accent-color); 
+  margin-bottom: 24px; 
+  font-weight: 600; 
+}
+
+.experience-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 12px;
+  padding-bottom: 90px;
+  /* Instead of hidden scrollbars, use an elegant custom one globally */
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(45, 212, 191, 0.6); /* Teal highlight */
+}
+
+/* Utilities */
+.glass-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-active);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.highlight-btn {
+  background: rgba(45, 212, 191, 0.15);
+  border-color: rgba(45, 212, 191, 0.6);
+  box-shadow: 0 4px 15px rgba(45, 212, 191, 0.2);
+}
+
+.glass-button:hover {
+  background: var(--glass-bg-hover);
+  color: #ffffff;
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.highlight-btn:hover {
+  background: rgba(45, 212, 191, 0.4);
+  box-shadow: 0 8px 25px rgba(45, 212, 191, 0.4);
+}
+
+.glass-button:active { transform: scale(0.95); }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .bg-container { padding: 12px; }
+  .main-card { 
+    padding: 24px 20px; 
+    border-radius: 20px; 
+    height: calc(100vh - 24px);
+    height: calc(100dvh - 24px);
+  }
+  .section-title { font-size: 2rem; }
+}

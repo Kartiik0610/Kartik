@@ -1,0 +1,155 @@
+/* Translucent Strip Behind Navbar - Smooth fade into background */
+.nav-glass {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(2, 3, 10, 0.95) 0%, transparent 100%);
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  z-index: 10;
+  pointer-events: none; /* Lets clicks pass through the fade */
+}
+
+/* Segmented Navbar Container */
+.segmented {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  
+  width: 520px;
+  max-width: 92vw; /* Fluid width on mobile */
+  z-index: 20;
+}
+
+/* The Sliding Highlight Pill */
+.indicator {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: calc(25% - 3px); /* 4 items = 25% */
+  height: calc(100% - 12px);
+  border-radius: 999px;
+  background: rgba(45, 212, 191, 0.9); /* Teal accent */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 15px rgba(45, 212, 191, 0.5);
+  transition: transform 0.4s cubic-bezier(0.2, 1, 0.2, 1);
+  z-index: 1;
+}
+
+/* Individual Links */
+.segment {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+  z-index: 2; 
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.segment span {
+  color: #94a3b8; 
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  pointer-events: none; 
+  white-space: nowrap; /* Prevents text from breaking into two lines */
+}
+
+/* Hover & Active States */
+.segment:hover span {
+  color: #ffffff;
+}
+
+.segment.active span {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+/* Mobile Responsiveness - Tighter, narrower navbar */
+@media (max-width: 600px) {
+  .segmented {
+    bottom: 16px;
+    width: 340px; /* Forces a smaller overall width */
+    max-width: 85vw; /* Keeps it inside screen edges on very small phones */
+    padding: 4px;
+  }
+  
+  .indicator {
+    top: 4px;
+    left: 4px;
+    width: calc(25% - 2px);
+    height: calc(100% - 8px);
+  }
+
+  .segment {
+    padding: 8px 0;
+  }
+  
+  .segment span {
+    font-size: 0.75rem; /* Crisper, smaller text */
+    letter-spacing: 0px;
+  }
+}
+
+
+
+
+/* --- Premium Page Transition Animations --- */
+/* The current card scales down softly and fades into the abyss */
+.card-slide-up-out {
+  animation: slideOutNext 0.6s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+}
+.card-slide-down-out {
+  animation: slideOutPrev 0.6s cubic-bezier(0.8, 0, 0.2, 1) forwards;
+}
+
+/* The new card slides in smoothly from the direction traveled */
+.card-slide-up-in {
+  animation: slideInNext 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+.card-slide-down-in {
+  animation: slideInPrev 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+/* OUT ANIMATIONS - Moving "Next" pushes card UP */
+@keyframes slideOutNext {
+  0% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0px); }
+  100% { transform: scale(0.9) translateY(-60px); opacity: 0; filter: blur(10px); }
+}
+
+/* OUT ANIMATIONS - Moving "Prev" pushes card DOWN */
+@keyframes slideOutPrev {
+  0% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0px); }
+  100% { transform: scale(0.9) translateY(60px); opacity: 0; filter: blur(10px); }
+}
+
+/* IN ANIMATIONS - Moving "Next" pulls new card from BOTTOM */
+@keyframes slideInNext {
+  0% { transform: scale(0.95) translateY(80px); opacity: 0; filter: blur(15px); }
+  100% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0px); }
+}
+
+/* IN ANIMATIONS - Moving "Prev" pulls new card from TOP */
+@keyframes slideInPrev {
+  0% { transform: scale(0.95) translateY(-80px); opacity: 0; filter: blur(15px); }
+  100% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0px); }
+}
