@@ -14,7 +14,7 @@
     content="Mechanical Engineer specializing in CAD, product design, and defense technology." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kartikchauhan.com" />
-  <meta property="og:image" content="images/profile.jpg" />
+  <meta property="og:image" content="Essentials/kartik.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Preload Next Pages for instant navigation -->
@@ -60,12 +60,11 @@
 
                 <div class="social-buttons">
                   <a href="https://www.linkedin.com/in/kartik-chauhan-234740225" target="_blank"
-                    class="social-btn glass-button" aria-label="LinkedIn Profile">LinkedIn</a>
-                  <a href="#" class="social-btn glass-button btn-disabled" aria-label="GitHub Profile">GitHub</a>
-                  <a href="https://drive.google.com/drive/folders/11xBHQt4K8-z4O1mCcjj-67cyYCVyKlWF?usp=drive_link" target="_blank" class="social-btn glass-button" aria-label="Google Drive Link">Drive</a>
+                    class="social-btn glass-button" aria-label="LinkedIn Profile" onclick="va('event', 'click_linkedin')">LinkedIn</a>
+                  <a href="#" class="social-btn glass-button btn-disabled" aria-label="GitHub Profile" onclick="va('event', 'click_github')">GitHub</a>
+                  <a href="https://drive.google.com/drive/folders/11xBHQt4K8-z4O1mCcjj-67cyYCVyKlWF?usp=drive_link" target="_blank" class="social-btn glass-button" aria-label="Google Drive Link" onclick="va('event', 'click_drive')">Drive</a>
                   <a href="Essentials/Resume.pdf" download="Kartik_Chauhan_Resume.pdf"
-                    class="social-btn glass-button highlight-btn" aria-label="Download Resume">Download
-                    Resume</a>
+                    class="social-btn glass-button highlight-btn" aria-label="Download Resume" onclick="va('event', 'download_resume')">Download Resume</a>
                 </div>
               </div>
             </div>
@@ -148,6 +147,10 @@
   <script src="js/page-scroll.js" defer></script>
   <script src="js/fullscreen.js" defer></script>
   <script src="js/fluid.js" defer></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <script src="js/smooth-ui.js" defer></script>
+  
+
 </body>
 
 </html>

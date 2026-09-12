@@ -34,11 +34,20 @@ certButtons.forEach(btn => {
 // Function to close modal
 function closeModal() {
   modal.classList.remove("active");
+  if (certImage) certImage.classList.remove("zoomed"); // Reset zoom on close
+  
   // Give the fade-out animation time before removing the source
   setTimeout(() => {
     if (certFrame) certFrame.src = "";
     if (certImage) certImage.src = "";
   }, 300); 
+}
+
+// Add Zoom functionality for Image
+if (certImage) {
+  certImage.addEventListener("click", () => {
+    certImage.classList.toggle("zoomed");
+  });
 }
 
 // Close via Button

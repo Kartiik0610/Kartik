@@ -1,16 +1,16 @@
 @import "fluid.css";
 
 :root {
-  /* iPhone 17 Ultramarine Tokens */
-  --bg-dark: #0a0d14; /* Very deep marine blue/black */
-  --glass-bg: rgba(255, 255, 255, 0.02);
-  --glass-bg-hover: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(45, 212, 191, 0.15); /* Teal glass tint */
-  --glass-blur: blur(40px) saturate(180%);
+  /* Moody Atmospheric Tokens */
+  --bg-dark: #030305; /* Deep, almost black abyss */
+  --glass-bg: rgba(20, 20, 30, 0.4);
+  --glass-bg-hover: rgba(30, 30, 45, 0.6);
+  --glass-border: rgba(139, 92, 246, 0.15); /* Soft violet glass tint */
+  --glass-blur: blur(40px) saturate(150%);
   
-  --text-active: #f8fafc; 
-  --text-dim: #94a3b8; /* Cool slate grey */
-  --accent-color: #2dd4bf; /* Vibrant teal/cyan (Ultramarine accent) */
+  --text-active: #e2e8f0; 
+  --text-dim: #718096; /* Moody slate grey */
+  --accent-color: #a78bfa; /* Soft luminous violet */
 
   --transition-smooth: all 0.4s cubic-bezier(.2, 1, .2, 1);
 }
@@ -26,12 +26,12 @@ body, html {
   background-color: var(--bg-dark);
   color: var(--text-dim);
   
-  /* Ultramarine Mesh Gradient */
+  /* Atmospheric Dark Mesh Gradient */
   background-image: 
-    radial-gradient(at 0% 0%, #0a0d14 0, transparent 60%),
-    radial-gradient(at 80% 0%, rgba(45, 212, 191, 0.08) 0, transparent 40%),
-    radial-gradient(at 100% 100%, #071221 0, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(13, 51, 68, 0.4) 0, transparent 50%);
+    radial-gradient(at 0% 0%, #030305 0, transparent 60%),
+    radial-gradient(at 80% 0%, rgba(139, 92, 246, 0.06) 0, transparent 40%),
+    radial-gradient(at 100% 100%, #080812 0, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(79, 70, 229, 0.15) 0, transparent 50%);
   background-size: 200% 200%;
   animation: liquidFlow 15s ease infinite;
 }
@@ -101,7 +101,7 @@ body, html {
   border-radius: 10px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(45, 212, 191, 0.6); /* Teal highlight */
+  background: rgba(139, 92, 246, 0.5); /* Violet highlight */
 }
 
 /* Utilities */
@@ -120,9 +120,9 @@ body, html {
 }
 
 .highlight-btn {
-  background: rgba(45, 212, 191, 0.15);
-  border-color: rgba(45, 212, 191, 0.6);
-  box-shadow: 0 4px 15px rgba(45, 212, 191, 0.2);
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.15);
 }
 
 .glass-button:hover {
@@ -134,8 +134,8 @@ body, html {
 }
 
 .highlight-btn:hover {
-  background: rgba(45, 212, 191, 0.4);
-  box-shadow: 0 8px 25px rgba(45, 212, 191, 0.4);
+  background: rgba(139, 92, 246, 0.25);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
 }
 
 .glass-button:active { transform: scale(0.95); }

@@ -94,11 +94,13 @@
   width: 90%;
   max-width: 900px;
   height: 85vh;
-  background: var(--bg-dark);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 50px -12px rgba(0,0,0,1);
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 24px;
+  border: 1px solid rgba(167, 139, 250, 0.15); /* Soft violet border to match theme */
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: auto; /* Allow scrolling when zoomed */
   position: relative;
   transform: scale(0.95);
   transition: transform 0.3s cubic-bezier(.2, 1, .2, 1);
@@ -118,6 +120,20 @@
 .cert-modal-content img#certImage {
   object-fit: contain;
   background: transparent;
+  cursor: zoom-in;
+  /* Use dimensions for layout-aware transition */
+  transition: width 0.3s cubic-bezier(0.2, 1, 0.2, 1), height 0.3s cubic-bezier(0.2, 1, 0.2, 1);
+  display: block;
+  margin: 0 auto; /* Keep it centered */
+}
+
+/* Zoomed State */
+.cert-modal-content img#certImage.zoomed {
+  cursor: zoom-out;
+  width: 200%; /* forces layout to expand */
+  height: 200%; /* forces layout to expand */
+  max-width: none;
+  max-height: none;
 }
 
 /* Improved Close Button */
