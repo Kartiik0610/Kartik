@@ -30,6 +30,11 @@
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <!-- Vercel Speed Insights -->
+  <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 
 <body>
@@ -45,7 +50,7 @@
           <div class="about-wrapper">
 
             <div class="about-top">
-              <img src="Essentials/kartik.jpeg" alt="Profile" class="profile-img" />
+              <img src="Essentials/kartik.jpeg" alt="Profile" class="profile-img" fetchpriority="high" />
 
               <div class="about-basic">
                 <h3 class="about-name">Kartik Chauhan</h3>
@@ -83,6 +88,7 @@
                 <span class="glass-button">Defense Engineering</span>
                 <span class="glass-button">FEA</span>
                 <span class="glass-button">Product Design</span>
+                <span class="glass-button">Data Analytics</span>
               </div>
             </div>
 

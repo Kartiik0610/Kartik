@@ -1,8 +1,8 @@
 const roles = [
+  "Mechanical Engineer",
+  "Data Analytics",
   "Front End Developer",
   "UI/UX Designer",
-  "Mechanical Engineer",
-  "Problem Solver",
   "Tech Enthusiast"
 ];
 
